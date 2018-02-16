@@ -1,4 +1,5 @@
 #### WELCOME ####
+Web IDE Project Name-ZCT_CAF_REP_FW
 
 This is Reporting Framework SAPUI5 Master-Detail Application.
 You can find the template version in the .project.json - file in your workspace
