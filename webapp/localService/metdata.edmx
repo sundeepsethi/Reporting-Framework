@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZCT_GWF_REP_FW_SRV" xml:lang="en" sap:schema-version="1">
+<EntityType Name="Report" sap:content-version="1">
+<Key>
+<PropertyRef Name="Keyword"/>
+</Key>
+<Property Name="Keyword" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Report Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ProgramName" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Program Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Transaction Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Active" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Visible Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="OnLoad" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="On Intial Load" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ReportType" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Report Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="HandlerClass" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="ObjectTypeName" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="RfcName" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Function Module" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="RfcDestination" Type="Edm.String" Nullable="false" MaxLength="32" sap:label="Destination" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ServiceUrl" Type="Edm.String" Nullable="false" MaxLength="255" sap:label="Reporting Framework : Service URL" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="PfcgRole" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Role" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="SelectionScreen" sap:content-version="1">
+<Key>
+<PropertyRef Name="Keyword"/>
+<PropertyRef Name="ElementId"/>
+</Key>
+<Property Name="Keyword" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Report Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ElementInnerPosition" Type="Edm.Byte" Nullable="false" sap:label="Inner Position" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ElementId" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Element ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ElementPosition" Type="Edm.Byte" Nullable="false" sap:label="Position on screen" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Visible" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="Visible Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ElementType" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Element Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Lable Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="PlaceHolder" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="In Place Holder Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="FilterKeyword" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Filter Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="AbapName" Type="Edm.String" Nullable="false" MaxLength="8" sap:label="Selection" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ServiceFilter" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Filter Property" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="CheckboxPreselected" Type="Edm.Boolean" Nullable="false" sap:label="Checkbox Pre sel" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="DropdownItemKey" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="DropDown Item Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="RadioBtnColumns" Type="Edm.Byte" Nullable="false" sap:label="Radio Button Columns" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="RadioBtnSelIndex" Type="Edm.Byte" Nullable="false" sap:label="Sel Index radio btn" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="FieldType" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Range or Parameter" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ValueType" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Value type for Input" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="LookupKeyword" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Lookup Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="DropDownValue" sap:content-version="1">
+<Key>
+<PropertyRef Name="LookupKeyword"/>
+<PropertyRef Name="Key"/>
+</Key>
+<Property Name="LookupKeyword" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Lookup Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Key" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Key Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Value Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="Column" sap:content-version="1">
+<Key>
+<PropertyRef Name="Keyword"/>
+</Key>
+<Property Name="Keyword" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Report Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="SelKey" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Report Keyword" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ColPosition" Type="Edm.Int32" Nullable="false" sap:label="Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ColLable" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Lable for Columns" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ColType" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Data Type for Column" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Visible" Type="Edm.Boolean" Nullable="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="SelColPosition" Type="Edm.Int32" Nullable="false" sap:label="Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="SelColLable" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Lable for Columns" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="SelColType" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Data Type for Column" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="SelColVisible" Type="Edm.Boolean" Nullable="false" sap:label="Flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityType Name="ReportTable" sap:content-version="1">
+<Key>
+<PropertyRef Name="Counter"/>
+</Key>
+<Property Name="ReportKeyword" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Counter" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Date" Type="Edm.DateTime" Precision="0" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Selection" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="col1" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="col2" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="col3" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="col4" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="col5" Type="Edm.String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="Filters" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+<Property Name="ID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+</EntityType>
+<EntityContainer Name="ZCT_GWF_REP_FW_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+<EntitySet Name="ReportSet" EntityType="ZCT_GWF_REP_FW_SRV.Report" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="SelectionScreenSet" EntityType="ZCT_GWF_REP_FW_SRV.SelectionScreen" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="DropDownValueSet" EntityType="ZCT_GWF_REP_FW_SRV.DropDownValue" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="ColumnSet" EntityType="ZCT_GWF_REP_FW_SRV.Column" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+<EntitySet Name="ReportTableSet" EntityType="ZCT_GWF_REP_FW_SRV.ReportTable" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+<FunctionImport Name="reportTable" ReturnType="Collection(ZCT_GWF_REP_FW_SRV.ReportTable)" EntitySet="ReportTableSet" m:HttpMethod="POST">
+<Parameter Name="col1" Type="Edm.String" Mode="In"/>
+</FunctionImport>
+</EntityContainer>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="https://webidetesting3853782-a6ddb99a1.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZCT_GWF_REP_FW_SRV/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="https://webidetesting3853782-a6ddb99a1.dispatcher.hana.ondemand.com/sap/opu/odata/sap/ZCT_GWF_REP_FW_SRV/$metadata"/>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>

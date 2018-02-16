@@ -1,0 +1,22 @@
+.customTableBorder{
+	border: 1px solid #e5e5e5 !important;
+}
+.customTableBorder tbody tr:nth-child(even){
+	background:whitesmoke !important;
+}
+.customSelectionTableBorder{
+	border: 1px solid #e5e5e5 !important;
+}
+.overFlowCustomBottom{
+	border-bottom: 0px !important;
+}
+
+.customFilterButton{
+	height:3rem !important;
+}
+.btnTextBold{
+	font-weight: bold !important;	
+}
+.searchFieldWidth{
+	min-width:4rem !important;
+}

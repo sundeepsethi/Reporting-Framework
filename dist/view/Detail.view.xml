@@ -1,0 +1,60 @@
+<mvc:View controllerName="metro.gwf.reporting.controller.Detail" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns:semantic="sap.m.semantic" xmlns:viz="sap.viz.ui5.controls" xmlns:commons="sap.suite.ui.commons" xmlns:layout="sap.ui.layout"
+	xmlns:footerbar="sap.ushell.ui.footerbar" xmlns:f="sap.ui.layout.form">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{Description}"
+		busy="{detailView>/busy}" class="sapUiFioriObjectPage" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:customHeaderContent>
+			<Button id="toggleFullScreenBtn"
+				class="sapUiHideOnPhone"
+				icon="sap-icon://full-screen"
+				tooltip="{i18n>sampleFullScreenTooltip}"
+				press="onToggleFullScreen"/>
+		</semantic:customHeaderContent>
+		<semantic:content>
+			<OverflowToolbar class="overFlowCustomBottom sapUiSmallMargin">
+				<OverflowToolbar id="oTokenizer" width="80%" class="overFlowCustomBottom"></OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button id="oItemFilter" icon="sap-icon://filter" type="Emphasized" class="sapUiSmallMargin customFilterButton" press="onFilterPress">
+					<layoutData><OverflowToolbarLayoutData moveToOverflow="false"/></layoutData>
+				</Button>
+			</OverflowToolbar>
+			<VBox>
+				<layout:Splitter width="100%" height="100%">
+					<layout:contentAreas>
+						<commons:ChartContainer id="chartContainer" showFullScreen="false" showPersonalization="false" autoAdjustHeight="false" showLegend="true"
+							personalizationPress="attachPersonalizationPress" contentChange="attachContentChange">
+							<commons:dimensionSelectors >
+								<Select id="chartTypeSelector" items="{chartTypeModel>/}" change="onChartTypeChange" visible="{= !${detailView>/exportButtonVisible}}">
+									<core:Item key="{chartTypeModel>key}" text="{chartTypeModel>name}" ></core:Item>
+								</Select>
+							</commons:dimensionSelectors>
+							<commons:content>
+								<commons:ChartContainerContent icon="sap-icon://table-view" title="{i18n>table}">
+									<commons:content>
+										<Table id="detailTable" busy="{detailView>/busyTable}" busyIndicatorDelay="{detailView>/lineItemTableDelay}"
+											visible="{detailView>/tableVisible}" inset="false" headerDesign="Standard" mode="None" width="auto" includeItemInSelection="false"
+											showUnread="false" growing="true" growingThreshold="20" growingTriggerText="" growingScrollToLoad="false" growingDirection="Downwards"
+											rememberSelections="false"></Table>
+									</commons:content>
+								</commons:ChartContainerContent>
+								<commons:ChartContainerContent icon="sap-icon://bar-chart" visible="{detailView>/graphVisible}" title="{i18n>columnChart}">
+									<commons:content>
+										<viz:VizFrame id="chartContainerVizFrame" busy="{detailView>/busyTable}" busyIndicatorDelay="{detailView>/lineItemTableDelay}"
+											uiConfig="{applicationSet:'fiori'}"></viz:VizFrame>
+									</commons:content>
+								</commons:ChartContainerContent>
+							</commons:content>
+						</commons:ChartContainer>
+					</layout:contentAreas>
+				</layout:Splitter>
+			</VBox>
+		</semantic:content>
+		<semantic:customFooterContent>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="{i18n>exportToCSV}" enabled="{detailView>/exportBtnEnable}" visible="{detailView>/exportButtonVisible}" class="btnTextBold" icon="sap-icon://download"
+					press="onDataExport"/>
+			</Toolbar>
+		</semantic:customFooterContent>
+	</semantic:DetailPage>
+</mvc:View>
